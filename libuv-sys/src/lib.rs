@@ -1212,6 +1212,8 @@ pub struct uv_interface_address_t {
     pub u_netmask: sockaddr_in6, // UNION
 }
 
+mod h2o;
+
 extern {
     pub fn uv_guess_handle(file: uv_file) -> uv_handle_type;
     pub fn uv_replace_allocator(malloc_func: uv_malloc_func,
