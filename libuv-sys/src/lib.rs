@@ -1,5 +1,6 @@
 #![allow(non_camel_case_types)]
-#![allow(raw_pointer_derive)]
+//#![allow(raw_pointer_derive)]
+#![feature(libc)]
 extern crate libc;
 use libc::{c_int, c_char, c_uint, c_void, uint64_t, size_t, sockaddr, sockaddr_in6, int64_t,
            ssize_t, addrinfo, c_long, sockaddr_in, sockaddr_storage};
@@ -1212,7 +1213,7 @@ pub struct uv_interface_address_t {
     pub u_netmask: sockaddr_in6, // UNION
 }
 
-mod h2o;
+pub mod h2o;
 
 extern {
     pub fn uv_guess_handle(file: uv_file) -> uv_handle_type;

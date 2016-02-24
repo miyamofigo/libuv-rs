@@ -155,6 +155,7 @@ fn main() {
     } else {
         get_libuv();
         println!("cargo:rustc-link-lib=static=uv");
+        println!("cargo:rustc-link-lib=dylib=pthread");
         println!("cargo:rustc-link-search=native={}",
                  env::current_dir().unwrap().join(libuv_lib().parent().unwrap()).to_str().unwrap());
         if target.contains("linux") {
